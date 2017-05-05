@@ -8,8 +8,11 @@
 
 @section('content')
     <h1>Biographies</h1>
-    <p>Text</p>
-    
-    
+    <h2>View</h2>
+
+
         
-@endsection 
+
+        
+@endsection
+    
