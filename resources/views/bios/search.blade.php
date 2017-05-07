@@ -27,6 +27,22 @@
         
         
         
+     @if($people)
+         <h3>People</h3>
+            @foreach($people as $person )
+                <p>{{$person['name_first']}} {{$person['name_last']}}</p>
+               
+            
+               
+               
+            @endforeach
+        
+        
+    @endif
+        
+        
+        
+        
     @if($searchTerm != null)
         <h2>Results for query: <em>{{ $searchTerm }}</em></h2>
     
@@ -44,6 +60,10 @@
             </div>
         @endif
     @endif
+    
+    
+    
+    
         
 @endsection
     
