@@ -22,6 +22,7 @@ class CreateBiographiesTable extends Migration
 		$table->timestamps();
 
 		$table->text('text');
+		$table->string('submitted_on');
 		$table->integer('language_id')->unsigned();
         $table->foreign('language_id')->references('id')->on('languages');
         $table->integer('person_id')->unsigned();
