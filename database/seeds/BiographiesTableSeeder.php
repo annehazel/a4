@@ -16,7 +16,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2017-25-04',
             'text' => 'Distance education teacher for the Lincoln Institute of Land Policy.
             Graduated in Civil Engineering and Doctor in Civil Engineering. Researcher of Unisinos
             and CNPq. Teacher and advisor on the programmes of Doctorate on Civil Engineering Doctoral
@@ -91,7 +91,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2017-25-04',
             'text' => "Catalina Molinatti is an architect from Universidad Nacional de Córdoba, Argentina, she has a Master's degree
             of Urban Development from El Colegio de México A.C. and is specialized in Urban Land Policies from the Lincoln Institute of
             Land Policy. She is consultant on participative strategic planning, urban management and financing tools for many argentine
@@ -123,7 +123,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2015-25-04',
             'text' => 'Arquiteta com especialização em Economia e mestrado em Planejamento e Desenvolvimento Urbano. Assessora em planejamento
             e gestão urbana em diferentes entidades da cidade de Bogotá (Secretaría Distrital de Planeación, Secretaría de Hábitat, Empresa de
             Acueducto y Alcantarillado, Metrovivienda, entre outras). Nos últimos anos trabalhou em temas de gestão da renovação urbana no
@@ -138,7 +138,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2017-25-04',
             'text' => "Architect with postgraduate studies in economy and development and urban planning. Advisor on urban planning and management
             for the public sector (mayor's office, planning and housing offices, water and sewage company among others). In the last years, she
             has been working on renewal and revitalization projects on Bogotá´s central areas. She was partial plans director in Bogotá, advisor
@@ -167,7 +167,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2015-25-04',
             'text' => 'Formado em Engenharia de Agrimensura pela União das Faculdades de Criciúma, com mestrado em Cadastro Técnico Multifinalitário e
             doutorado em Engenharia de Produção pela Universidade Federal de Santa Catarina - UFSC. Foi professor das disciplinas de Cadastro Técnico
             Municipal, Loteamento e Divisão e Demarcação de Terras na Universidade do Extremo Sul Catarinense. Coordenou trabalhos de levantamentos cadastrais

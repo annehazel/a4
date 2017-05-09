@@ -11,10 +11,22 @@
     <h2>Add a biography</h2>
 
 
-    <form method='GET' action='/'>
+    <form method='POST' action='/add'>
+    
+        {{ csrf_field() }}
+        
+        <p>* Select a person:</p>
+        <p>* Select the lagnuage of the biography:<br>
+        <input type="radio" name="language" value="1"> English
+        <input type="radio" name="language" value="2"> Spanish
+        <input type="radio" name="language" value="3"> Portuguese
+        <br>
+        <label for="submitted_on">Submitted on:</label>
+        <input type="date" name="submitted_on" id="submitted_on"><br>
+        <label for='biography'>* Biography:</label><br>
+        <textarea rows="4" cols="50" name='biography' id='biography'
+        value='{{ old('biography')}}'> </textarea>
 
-        <label for='searchTerm'>Search by name:</label>
-        <input type='text' name='searchTerm' id='searchTerm' value=''>
 
         <br>
         <input type='submit' class='btn btn-primary btn-small'>

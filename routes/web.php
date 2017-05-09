@@ -10,7 +10,8 @@ Route::get('/', 'BiographyController@search');
 
 Route::get('/edit', 'BiographyController@update');
 
-Route::get('/add', 'BiographyController@create');
+Route::get('/add', 'BiographyController@add');
+Route::post('/add', 'BiographyController@storeBiography');
 
 Route::get('/view', 'BiographyController@view');
 
