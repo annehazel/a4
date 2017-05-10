@@ -114,7 +114,19 @@ class BiographyController extends Controller
         
     public function add(Request $request) {
         
-        return view('bios.add');
+        
+        $people = Person::orderBy('name_last', 'ASC')->get();
+        
+        $peopleForDropdown = [];
+        
+        foreach($people as $person) {
+            
+            $peopleForDropdown[$person->id] = $person->name_last.', '.$person->name_first;
+        }
+        
+        return view('bios.add')->with([
+            'peopleForDropdown' => $peopleForDropdown,
+              ]);
     }
            
         

@@ -15,7 +15,14 @@
     
         {{ csrf_field() }}
         
-        <p>* Select a person:</p>
+        <label for='person_id'>* Biography for:</label>
+        <select id='person_id' name='person_id'>
+            @foreach($peopleForDropdown as $person_id => $personName)
+                 <option value='{{ $person_id }}'>
+                     {{$personName}}
+                 </option>
+             @endforeach
+        </select>
         <p>* Select the lagnuage of the biography:<br>
         <input type="radio" name="language" value="1"> English
         <input type="radio" name="language" value="2"> Spanish
