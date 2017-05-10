@@ -9,7 +9,7 @@
 Route::get('/', 'BiographyController@search');
 
 Route::get('/edit/{id}', 'BiographyController@edit');
-Route::post('/edit/', 'BiographyController@saveEdits');
+Route::post('/edit', 'BiographyController@saveEdits');
 
 Route::get('/add', 'BiographyController@add');
 Route::post('/add', 'BiographyController@storeBiography');

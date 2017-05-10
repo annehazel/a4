@@ -129,12 +129,29 @@ class BiographyController extends Controller
 * /edit
 */
            
-    public function savedEdits(){
+    public function saveEdits(Request $request){
         
-        $biography = Biography::where('person_id', 'LIKE','1');
+        $this->validate($request, [
+            'language' => 'required',
+            'biography' => 'required',
+            'submitted_on' => 'required',
+        ]);
         
         
-        return view('bios.edit');
+        $biography = Biography::find($request->id);
+        
+        $biography->language_id = $request->language;
+        $biography->submitted_on = $request->submitted_on;
+        $biography->text = $request->biography;
+        $biography->person_id = 1;
+        
+
+        $biography->save();
+                
+        return view('bios.view')->with([
+            'biography'=> $biography,
+              ]);
+    
         
     }
 

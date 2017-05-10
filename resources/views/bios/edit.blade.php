@@ -15,6 +15,9 @@
     
         {{ csrf_field() }}
         
+        <input type='hidden' name='id'' value='{{$biography->id}}'>
+        
+        
         <p>* Change associated person:</p>
         <p>* Biography language:<br>
         <input type="radio" name="language" value="1"> English
@@ -33,7 +36,16 @@
 
     </form>
         
-        
+     
+    @if(count($errors) > 0)
+        <div class='alert alert-danger error'>
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif   
         
 
         

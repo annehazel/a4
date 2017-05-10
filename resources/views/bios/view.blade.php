@@ -14,7 +14,8 @@
     
     <p>City, Country:</p>
     
-    <h3>Biographies</h3>
+    <h3>Biographies: </h3>
+    <p>{{$biography->text}}
         
 
         
