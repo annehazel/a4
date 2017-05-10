@@ -27,21 +27,7 @@
         
         
         
-     @if($people)
-         <h3>People</h3>
-            @foreach($people as $person )
-                <p>{{$person['name_first']}} {{$person['name_last']}}</p>
-                    
-                @foreach($person->biographies as $biography)
-                    
-                    <p>{{$biography->text}}</p>
-                @endforeach
-    
-            @endforeach
-        
-        
-    @endif 
-        
+
         
     
     

@@ -18,10 +18,6 @@ class BiographyController extends Controller
     
     public function index(){
         
-        
-        $people = Person::all();
-        dump($people->toArray());
-        
         return view('bios.search');
         
     }
@@ -31,67 +27,9 @@ class BiographyController extends Controller
    * GET
    * /search
    */
-   public function search(Request $request) {
+   public function search() {
     
-        $people = Person::with('biographies')->get();
-        
-    
-        $recentBios = [];
-        
-        
-        foreach($people as $person => $recentBio) {
-            
-            $firstName = $people[$person]['name_first'];
-            $lastName = $people[$person]['name_last'];
-           
-            
-        }
-   
- 
-   
-       # Start with an empty array of search results; books that
-       # match our search query will get added to this array
-       $searchResults = [];
-   
-       # Store the searchTerm in a variable for easy access
-       # The second parameter (null) is what the variable
-       # will be set to *if* searchTerm is not in the request.
-       $searchTerm = $request->input('searchTerm', null);
-   
-       # Only try and search *if* there's a searchTerm
-       if($searchTerm) {
-   
-            $people = Person::all();
-            dump($people->toArray());
-   
-           # Loop through all the book data, looking for matches
-           # This code was taken from v1 of foobooks we built earlier in the semester
-           foreach($books as $title => $book) {
-   
-               # Case sensitive boolean check for a match
-               if($request->has('caseSensitive')) {
-                   $match = $title == $searchTerm;
-               }
-               # Case insensitive boolean check for a match
-               else {
-                   $match = strtolower($title) == strtolower($searchTerm);
-               }
-   
-               # If it was a match, add it to our results
-               if($match) {
-                   $searchResults[$title] = $book;
-               }
-   
-           }
-       }
-   
-       # Return the view, with the searchTerm *and* searchResults (if any)
-       return view('bios.search')->with([
-           'people' => $people,
-           'searchTerm' => $searchTerm,
-           'caseSensitive' => $request->has('caseSensitive'),
-           'searchResults' => $searchResults
-       ]);
+       return view('bios.search');
    }
    
    
@@ -105,6 +43,16 @@ class BiographyController extends Controller
         
         $biography = Biography::find($id);
         
+        # Get all the authors
+        $people = Person::orderBy('name_last', 'ASC')->get();
+        
+        $peopleForDropdown = [];
+        
+        foreach($people as $person) {
+            
+            $peopleForDropdown[$person->id] = $person->name_last.', '.$person->name_first;
+        }
+        
         if(is_null($biography)){
             
             Session::flash('message', 'Biography not found');
@@ -115,6 +63,7 @@ class BiographyController extends Controller
         return view('bios.edit')->with([
             'id'=> $id,
             'biography'=> $biography,
+            'peopleForDropdown' => $peopleForDropdown
                 
               ]);
     
@@ -124,11 +73,10 @@ class BiographyController extends Controller
     
     
     
-/**
-* POST
-* /edit
-*/
-           
+    /**
+    * POST
+    * /edit
+    */       
     public function saveEdits(Request $request){
         
         $this->validate($request, [
@@ -143,10 +91,12 @@ class BiographyController extends Controller
         $biography->language_id = $request->language;
         $biography->submitted_on = $request->submitted_on;
         $biography->text = $request->biography;
-        $biography->person_id = 1;
+        $biography->person_id = $request->person_id;
         
 
         $biography->save();
+        
+        Session::flash('message', 'The biography was saved successfully.');
                 
         return view('bios.view')->with([
             'biography'=> $biography,
@@ -155,12 +105,12 @@ class BiographyController extends Controller
         
     }
 
-/**
- *GET
- * /new
-* Add new biography
-* 
-*/  
+    /**
+     *GET
+     * /new
+    * Add new biography
+    * 
+    */  
         
     public function add(Request $request) {
         
@@ -168,12 +118,12 @@ class BiographyController extends Controller
     }
            
         
-/**
- * POST
- * /new
-* Store new biography
-* 
-*/    
+    /**
+    * POST
+    * /new
+    * Store new biography
+    * 
+    */    
     
     public function storeBiography(Request $request){
         
