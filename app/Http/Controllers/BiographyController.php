@@ -11,26 +11,26 @@ use Session;
 class BiographyController extends Controller
 {
     
-/**
-* GET
-* / 
-*/
+    /**
+     * GET
+     * / 
+     */
     
     public function index(){
         
+        
+        $people = Person::all();
+        dump($people->toArray());
         
         return view('bios.search');
         
     }
     
     
-/**
-* GET
-* /search
-*
-* IN PROGRESS / TRIAL
-* 
-*/
+    /**
+   * GET
+   * /search
+   */
    public function search(Request $request) {
     
         $people = Person::with('biographies')->get();
@@ -43,11 +43,57 @@ class BiographyController extends Controller
             
             $firstName = $people[$person]['name_first'];
             $lastName = $people[$person]['name_last'];
-                       
+           
+            
         }
-    
+   
+ 
+   
+       # Start with an empty array of search results; books that
+       # match our search query will get added to this array
+       $searchResults = [];
+   
+       # Store the searchTerm in a variable for easy access
+       # The second parameter (null) is what the variable
+       # will be set to *if* searchTerm is not in the request.
+       $searchTerm = $request->input('searchTerm', null);
+   
+       # Only try and search *if* there's a searchTerm
+       if($searchTerm) {
+   
+            $people = Person::all();
+            dump($people->toArray());
+   
+           # Loop through all the book data, looking for matches
+           # This code was taken from v1 of foobooks we built earlier in the semester
+           foreach($books as $title => $book) {
+   
+               # Case sensitive boolean check for a match
+               if($request->has('caseSensitive')) {
+                   $match = $title == $searchTerm;
+               }
+               # Case insensitive boolean check for a match
+               else {
+                   $match = strtolower($title) == strtolower($searchTerm);
+               }
+   
+               # If it was a match, add it to our results
+               if($match) {
+                   $searchResults[$title] = $book;
+               }
+   
+           }
+       }
+   
+       # Return the view, with the searchTerm *and* searchResults (if any)
+       return view('bios.search')->with([
+           'people' => $people,
+           'searchTerm' => $searchTerm,
+           'caseSensitive' => $request->has('caseSensitive'),
+           'searchResults' => $searchResults
+       ]);
    }
-      
+   
    
    
 /**
@@ -55,7 +101,35 @@ class BiographyController extends Controller
 * /edit
 */
            
-    public function update(){
+    public function edit($id){
+        
+        $biography = Biography::find($id);
+        
+        if(is_null($biography)){
+            
+            Session::flash('message', 'Biography not found');
+            return redirect('/');
+        
+        }
+        # Redirect user to the edit route with an $id
+        return view('bios.edit')->with([
+            'id'=> $id,
+            'biography'=> $biography,
+                
+              ]);
+    
+    
+        
+    }
+    
+    
+    
+/**
+* POST
+* /edit
+*/
+           
+    public function savedEdits(){
         
         $biography = Biography::where('person_id', 'LIKE','1');
         
@@ -65,6 +139,8 @@ class BiographyController extends Controller
     }
 
 /**
+ *GET
+ * /new
 * Add new biography
 * 
 */  
@@ -76,6 +152,8 @@ class BiographyController extends Controller
            
         
 /**
+ * POST
+ * /new
 * Store new biography
 * 
 */    
