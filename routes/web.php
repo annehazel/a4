@@ -17,6 +17,8 @@ Route::post('/add', 'BiographyController@storeBiography');
 Route::get('/view/', 'BiographyController@view');
 Route::get('/view/{id}', 'BiographyController@viewWithId');
 
+Route::get('/delete/{id}', 'BiographyController@confirmDeletion');
+Route::post('/delete', 'BiographyController@delete');
 
 
 /*

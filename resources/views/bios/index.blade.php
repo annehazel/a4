@@ -39,9 +39,15 @@
             <br>
             <input type='submit' value='View/Edit' class='btn btn-primary btn-small'>
         </form>
-    
-        
+
     </div>
+        
+     @foreach($recentBiographies as $biography)
+            
+            <p>{{$biography->text}}</p>
+            
+    @endforeach   
+    
         
 
 

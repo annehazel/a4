@@ -14,7 +14,7 @@ class Biography extends Model
         
     public function language() {
             # Biography belongs to Person
-            return $this->hasOne('App\Language');
+            return $this->belongsTo('App\Language');
         }
         
 }
