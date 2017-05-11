@@ -19,10 +19,10 @@ class Person extends Model
 		$people = Person::orderBy('name_last', 'ASC')->get();
 		$peopleForDropdown = [];
 		foreach($people as $person) {
-			$peopleForDropdown[$person->id] = $person->name_first.', '.$person->name_last;
+			$peopleForDropdown[$person->id] = $person->name_first.' '.$person->name_last;
 		}
 
-    return $personForDropdown;
+    return $peopleForDropdown;
 }
 	
 	

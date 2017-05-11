@@ -18,15 +18,17 @@ class BiographyController extends Controller
     
     public function index(){
         
-        $biographies = Biography::with('people');
-        $recentBiographies = $biographies->sortByDesc('updated_at')->take(3);
+         $peopleForDropdown = Person::peopleForDropdown();
+    
+       // $biographies = Biography::with('people');
+      //  $recentBiographies = $biographies->sortByDesc('updated_at')->take(3);
         
-        //$biographies=Biography::with('people')->sortByDesc('updated_at')->take(3);
+       // $biographies=Biography::with('people')->sortByDesc('updated_at')->take(3);
        
         return view('bios.index')->with([
-            'biographies' => $biographies,
-            'recentBiographies' => $recentBiographies,
-       
+         //   'biographies' => $biographies,
+          //  'recentBiographies' => $recentBiographies,
+            'peopleForDropdown' => $peopleForDropdown
             ]);
        
     }
@@ -54,16 +56,8 @@ class BiographyController extends Controller
         
         # Get all the authors
         $people = Person::orderBy('name_last', 'ASC')->get();
-        
-        $peopleForDropdown = [];
-        
-        foreach($people as $person) {
-            
-            $peopleForDropdown[$person->id] = $person->name_last.', '.$person->name_first;
-        }
-        
-        
-        
+        $peopleForDropdown = Person::peopleForDropdown();
+
         
         if(is_null($biography)){
             
@@ -123,19 +117,13 @@ class BiographyController extends Controller
      * /new
     * Add new biography
     * 
-    */  
-        
+    */     
     public function add(Request $request) {
         
         
         $people = Person::orderBy('name_last', 'ASC')->get();
         
-        $peopleForDropdown = [];
-        
-        foreach($people as $person) {
-            
-            $peopleForDropdown[$person->id] = $person->name_last.', '.$person->name_first;
-        }
+        $peopleForDropdown = Person::peopleForDropdown();
         
         return view('bios.add')->with([
             'peopleForDropdown' => $peopleForDropdown,
@@ -180,15 +168,29 @@ class BiographyController extends Controller
     
      }   
         
+     public function view(Request $request){
+        
+        $personId = $request->person_id;
+        
+        return redirect('/view/'.$personId);
+        
+    }   
     
-    
         
-    public function view(){
+    public function viewWithId($id){
+        
+        $person = Person::with('biographies')->find($id);
+        //$personWithBios = $person->with('biographies');
+        
+        dump($person->biographies);
         
         
-        $newBiography = new Biography();
+        return view('bios.view')->with([
+            
+          'person' => $person,
+          //'personWithBios' => $personWithBios
         
-        return view('bios.view');
+        ]);
         
     }
     

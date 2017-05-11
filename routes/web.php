@@ -14,7 +14,9 @@ Route::post('/edit', 'BiographyController@saveEdits');
 Route::get('/add', 'BiographyController@add');
 Route::post('/add', 'BiographyController@storeBiography');
 
-Route::get('/view', 'BiographyController@view');
+Route::get('/view/', 'BiographyController@view');
+Route::get('/view/{id}', 'BiographyController@viewWithId');
+
 
 
 /*
