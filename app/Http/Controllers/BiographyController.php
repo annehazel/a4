@@ -22,10 +22,8 @@ class BiographyController extends Controller
         $recentBiographies = $biographies->sortByDesc('updated_at')->take(3);
         
         //$biographies=Biography::with('people')->sortByDesc('updated_at')->take(3);
-
-
-        
-        return view('bios.search')->with([
+       
+        return view('bios.index')->with([
             'biographies' => $biographies,
             'recentBiographies' => $recentBiographies,
        
@@ -40,7 +38,7 @@ class BiographyController extends Controller
    */
    public function search() {
     
-       return view('bios.search');
+       return view('bios.index');
    }
    
    

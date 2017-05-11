@@ -17,7 +17,7 @@
 
     <form method='GET' action='/'>
 
-        <label for='searchTerm'>Search by name:</label>
+        <label for='searchTerm'>xxxx:</label>
         <input type='text' name='searchTerm' id='searchTerm' value=''>
 
         <br>
