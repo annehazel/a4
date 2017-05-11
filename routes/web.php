@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', 'BiographyController@search');
+Route::get('/', 'BiographyController@index');
 
 Route::get('/edit/{id}', 'BiographyController@edit');
 Route::post('/edit', 'BiographyController@saveEdits');

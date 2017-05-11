@@ -21,15 +21,15 @@
         <label for='person_id'>* Biography for:</label>
         <select id='person_id' name='person_id'>
             @foreach($peopleForDropdown as $person_id => $personName)
-                 <option value='{{ $person_id }}' {{ ($biography->person_id == $person_id) ? 'SELECTED' : '' }}>
+                 <option value='{{old('person_id', $person_id) }}' {{ ($biography->person_id == $person_id) ? 'SELECTED' : '' }}>
                      {{$personName}}
                  </option>
              @endforeach
         </select>
         <p>* Biography language:<br>
-        <input type="radio" name="language" value="1"> English
-        <input type="radio" name="language" value="2"> Spanish
-        <input type="radio" name="language" value="3"> Portuguese
+        <input type="radio" name="language_id" value="1" {{$biography->language_id=="1" ? 'CHECKED' : null }}> English
+        <input type="radio" name="language_id" value="2" {{$biography->language_id=="2" ? 'CHECKED' : null }}> Spanish
+        <input type="radio" name="language_id" value="3" {{$biography->language_id=="3" ? 'CHECKED' : null }}> Portuguese
         <br>
         <label for="submitted_on">Submitted on:</label>
         <input type="date" name="submitted_on" id="submitted_on" value='{{ old('submitted_on', $biography->submitted_on)}}'><br>

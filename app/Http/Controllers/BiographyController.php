@@ -18,8 +18,19 @@ class BiographyController extends Controller
     
     public function index(){
         
-        return view('bios.search');
+        $biographies = Biography::with('people');
+        $recentBiographies = $biographies->sortByDesc('updated_at')->take(3);
         
+        //$biographies=Biography::with('people')->sortByDesc('updated_at')->take(3);
+
+
+        
+        return view('bios.search')->with([
+            'biographies' => $biographies,
+            'recentBiographies' => $recentBiographies,
+       
+            ]);
+       
     }
     
     
@@ -53,6 +64,9 @@ class BiographyController extends Controller
             $peopleForDropdown[$person->id] = $person->name_last.', '.$person->name_first;
         }
         
+        
+        
+        
         if(is_null($biography)){
             
             Session::flash('message', 'Biography not found');
@@ -63,7 +77,8 @@ class BiographyController extends Controller
         return view('bios.edit')->with([
             'id'=> $id,
             'biography'=> $biography,
-            'peopleForDropdown' => $peopleForDropdown
+            'peopleForDropdown' => $peopleForDropdown,
+            'language_id'=> $biography->language_id
                 
               ]);
     

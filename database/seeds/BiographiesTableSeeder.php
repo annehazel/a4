@@ -16,7 +16,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2017-25-04',
+            'submitted_on' => '2017-04-25',
             'text' => 'Distance education teacher for the Lincoln Institute of Land Policy.
             Graduated in Civil Engineering and Doctor in Civil Engineering. Researcher of Unisinos
             and CNPq. Teacher and advisor on the programmes of Doctorate on Civil Engineering Doctoral
@@ -30,7 +30,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2016-04-25',
             'text' => 'Profesor de cursos EAD de Lincoln Institute. Ingeniero Civil y Doctor en Ingeniería.
             Investigador de Unisinos y CNPq. Profesor de los cursos de Doctorado en Ingenieria y de Maestria
             en Arquitectura en Unisinos. Las áreas de investigación incluyen mercado inmobiliario, construction
@@ -43,7 +43,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2016-04-25',
             'text' => 'Professor de cursos de ensino à distancia do Lincoln Institute. Engenheiro Civil e Doutor
             em Engenharia. Pesquisador da Unisinos e do CNPq. Professor dos cursos de Doutorado em Engenharia e
             de Mestrado em Arquitetura na Unisinos. As áreas de pesquisa envolvem o mercado imobiliário, construções
@@ -56,7 +56,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2016-04-25',
             'text' => 'Catalina Molinatti es arquitecta por la Universidad Nacional de Córdoba, Argentina, maestra en
             Desarrollo Urbano por El Colegio de México y está especializada en Políticas de Suelo Urbano por el Instituto
             Lincoln de Políticas de Suelo. Consultora en planificación estratégica participativa y en instrumentos de
@@ -73,7 +73,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2016-04-25',
             'text' => 'Catalina Molinatti e arquiteta pela Universidad Nacional de Córdoba, Argentina, mestre em Desenvolvimento
             Urbano por El Colegio de México e especializada em Políticas de Solo Urbano pelo Lincoln Institute of Land Policy.
             Consultora em planejamento estratégico participativo e em ferramentas de gestão e financiamento urbanos para vários
@@ -91,7 +91,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2017-25-04',
+            'submitted_on' => '2017-04-25',
             'text' => "Catalina Molinatti is an architect from Universidad Nacional de Córdoba, Argentina, she has a Master's degree
             of Urban Development from El Colegio de México A.C. and is specialized in Urban Land Policies from the Lincoln Institute of
             Land Policy. She is consultant on participative strategic planning, urban management and financing tools for many argentine
@@ -108,7 +108,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2016-04-25',
             'text' => 'Arquitecta con especialización en Economía y maestría en Planeación y Desarrollo Urbano. Asesora en planeación y
             gestión urbana en diferentes entidades de la ciudad de Bogotá (Secretaría Distrital de Planeación, Secretaría de Hábitat, Empresa
             de Acueducto y Alcantarillado, Metrovivienda, entre otras). En los últimos años trabajó en temas de gestión de renovación de
@@ -123,7 +123,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2015-25-04',
+            'submitted_on' => '2015-04-25',
             'text' => 'Arquiteta com especialização em Economia e mestrado em Planejamento e Desenvolvimento Urbano. Assessora em planejamento
             e gestão urbana em diferentes entidades da cidade de Bogotá (Secretaría Distrital de Planeación, Secretaría de Hábitat, Empresa de
             Acueducto y Alcantarillado, Metrovivienda, entre outras). Nos últimos anos trabalhou em temas de gestão da renovação urbana no
@@ -138,7 +138,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2017-25-04',
+            'submitted_on' => '2017-04-25',
             'text' => "Architect with postgraduate studies in economy and development and urban planning. Advisor on urban planning and management
             for the public sector (mayor's office, planning and housing offices, water and sewage company among others). In the last years, she
             has been working on renewal and revitalization projects on Bogotá´s central areas. She was partial plans director in Bogotá, advisor
@@ -152,7 +152,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2016-04-25',
             'text' => 'Tiene formación en Ingeniería en Agrimensura por la "União das Faculdades de Criciúma", un título de maestría en "Cadastro
             Técnico Multifinalitario" y doctorado en "Engenharia de Produção" por la "Universidade Federal de Santa Catarina". Enseñó "Catastro Técnico
             Municipal, Loteamento e Divisão e Demarcação de Terras" en la "Universidade do Extremo Sul Catarinense". Coordinó trabajos de relevamientos
@@ -167,7 +167,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2015-25-04',
+            'submitted_on' => '2015-04-25',
             'text' => 'Formado em Engenharia de Agrimensura pela União das Faculdades de Criciúma, com mestrado em Cadastro Técnico Multifinalitário e
             doutorado em Engenharia de Produção pela Universidade Federal de Santa Catarina - UFSC. Foi professor das disciplinas de Cadastro Técnico
             Municipal, Loteamento e Divisão e Demarcação de Terras na Universidade do Extremo Sul Catarinense. Coordenou trabalhos de levantamentos cadastrais
@@ -182,7 +182,7 @@ class BiographiesTableSeeder extends Seeder
         Biography::insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'submitted_on' => '2016-25-04',
+            'submitted_on' => '2016-04-25',
             'text' => 'Egresada de la Licenciatura en Urbanismo de la Facultad de Arquitectura, Universidad Nacional Autónoma de México (UNAM), en donde
             también ha realizado diversos cursos de actualización relacionados con la política urbana de ordenamiento territorial y actualmente es docente
             de la asignatura "Análisis Histórico Crítico del Urbanismo II". En la UNAM ha participado en actividades de investigación sobre estructura urbana,
