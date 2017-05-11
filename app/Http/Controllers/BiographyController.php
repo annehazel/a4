@@ -156,7 +156,7 @@ class BiographyController extends Controller
         $newBiography->language_id = $request->language;
         $newBiography->submitted_on = $request->submitted_on;
         $newBiography->text = $request->biography;
-        $newBiography->person_id = 1;
+        $newBiography->person_id = $request->person_id;
         
 
         $newBiography->save();
@@ -180,11 +180,7 @@ class BiographyController extends Controller
     public function viewWithId($id){
         
         $person = Person::with('biographies')->find($id);
-        //$personWithBios = $person->with('biographies');
-        
-        dump($person->biographies);
-        
-        
+             
         return view('bios.view')->with([
             
           'person' => $person,
