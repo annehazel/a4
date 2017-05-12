@@ -8,7 +8,7 @@
 
 @section('content')
     
-    <h1>Delete Biography</h1>
+    <h2>Delete Biography</h2>
     
     <h3>Confirm deletion</h3>
     <form method='POST' action='/delete'>

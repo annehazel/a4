@@ -8,7 +8,7 @@
 
 @section('content')
     
-    <h1>View/Edit Biography</h1>
+    <h1>View/Edit a Biography</h1>
     
     <h3>Biography for: {{$person->name_first.' '.$person->name_last}}</h3>
     

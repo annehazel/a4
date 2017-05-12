@@ -7,7 +7,6 @@
 
 
 @section('content')
-    <h1>Biographies</h1>
     <h2>Edit a Biography</h2>
 
 

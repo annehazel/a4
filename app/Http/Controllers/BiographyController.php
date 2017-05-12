@@ -13,13 +13,19 @@ class BiographyController extends Controller
     
     /**
      * GET
-     * / 
+     * /
+     * This function works to setup the landing page of the applicaiton.
+     * It setups up the people needed to populate the dropdown menu present
+     * and displays the three most recently updated biogrpahies
      */
     
     public function index(){
         
-         $peopleForDropdown = Person::peopleForDropdown();
-         $recentBiographies = Biography::with('language')->with('person')->orderByDesc('updated_at')->take(3)->get();
+        # dynamically get a list of the people
+        $peopleForDropdown = Person::peopleForDropdown();
+        # use a query to retrieve the recently updated biographies along with
+        # their assocaited language and person
+        $recentBiographies = Biography::with('language')->with('person')->orderByDesc('updated_at')->take(3)->get();
        
         return view('bios.index')->with([
             'peopleForDropdown' => $peopleForDropdown,
@@ -29,18 +35,24 @@ class BiographyController extends Controller
     }
    
    
-/**
-* GET
-* /edit
-*/
+    /**
+    * GET
+    * /edit
+    * This function is the initial function called to setup
+    * the form where the user can edit a certain instance of
+    * a biography.
+    */
            
     public function edit($id){
         
+        # Retrieve the biography using its id
         $biography = Biography::find($id);
         
-        # Get all the people
-        $people = Person::orderBy('name_last', 'ASC')->get();
+        # 
+        //$people = Person::orderBy('name_last', 'ASC')->get();
         $peopleForDropdown = Person::peopleForDropdown();
+        
+        # remove the line breaks used in the biography seeder 
         $biography->text  = preg_replace('/\s+/', ' ', trim($biography->text ));
         
         if(is_null($biography)){
@@ -57,12 +69,10 @@ class BiographyController extends Controller
             'language_id'=> $biography->language_id
                 
               ]);
-    
-    
-        
+
     }
     
-    
+      
     
     /**
     * POST
@@ -71,9 +81,9 @@ class BiographyController extends Controller
     public function saveEdits(Request $request){
         
         $this->validate($request, [
-            'language_id' => 'required',
+            'language_id' => 'required|numeric',
             'biography' => 'required',
-            'submitted_on' => 'required',
+            'submitted_on' => 'required|date',
         ]);
         
         
@@ -89,7 +99,7 @@ class BiographyController extends Controller
         
         $biography->save();
         
-        Session::flash('message', 'The biography was saved successfully.');
+        Session::flash('message', 'The biography was added successfully.');
                 
         return redirect('/view/'.$person_id);
     
