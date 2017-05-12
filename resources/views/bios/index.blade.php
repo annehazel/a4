@@ -10,7 +10,7 @@
     
     
 <div>  <!-- main div -->   
-    <h1>Faculty and Staff Biographies</h1>
+
     <p>Select a faculty memeber or staff member below to add a new version of their biogrpahy or view/edit an
     existing version.</p>
         

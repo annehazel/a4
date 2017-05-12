@@ -23,15 +23,18 @@
     </form>
             
     <h3>Biographies: </h3>
-        
-        @foreach($person->biographies as $biography)
-            
-            <a href='/edit/{{ $biography->id }}'>Edit this version</a>
-            <a href='/delete/{{ $biography->id }}'>Delete this version</a>
-            <p>{{$biography['text']}}</p>     
-                 
-        @endforeach
-        
+
+        @if(count($person->biographies) == 0)
+            <p>Currently there are no biographies for this person.</p>
+        @else
+            @foreach($person->biographies as $biography)
+                
+                <a href='/edit/{{ $biography->id }}'>Edit this version</a>
+                <a href='/delete/{{ $biography->id }}'>Delete this version</a>
+                <p>{{$biography['text']}}</p>     
+                     
+            @endforeach
+        @endif
     <p></p>
         
 

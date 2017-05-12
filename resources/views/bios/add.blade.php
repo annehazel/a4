@@ -6,8 +6,8 @@
 @endsection
 
 
+
 @section('content')
-    <h1>Biographies</h1>
     <h2>Add a biography</h2>
 
 
