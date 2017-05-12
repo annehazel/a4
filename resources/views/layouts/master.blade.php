@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>
         @yield('title', 'Bill Calculator')
@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="col-md-8">
 			
-			<img class="logo" src="/images/LILP_LogoHorizontal.jpeg">
+			<img class="logo" alt="Lincoln-Institute-Logo"src="/images/LILP_LogoHorizontal.jpeg">
 			<h1 class="heading">Faculty and Staff Biographies</h1>
 				
 			@if(Session::get('message') != null))
