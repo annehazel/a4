@@ -10,11 +10,12 @@
     
     
 <div>  <!-- main div -->   
-
+    <p>In order to keep track of the versions of biographies received by the Institute for its Faculy and Staff,
+    new biogrpahies received should be entered into the system</p>
     <p>Select a faculty memeber or staff member below to add a new version of their biogrpahy or view/edit an
     existing version.</p>
         
-    <div> <!-- add new biography div --> 
+    <div class="input-block"> <!-- add new biography div --> 
     
         <form method='GET' action='/add'>
             {{ csrf_field() }}
@@ -24,7 +25,7 @@
             
     </div>
 
-    <div>
+    <div class="input-block">
         <form method='GET' action='/view/'>
             {{ csrf_field() }}
             
@@ -41,11 +42,15 @@
         </form>
 
     </div>
+    
+    <h2>Recently Updated Biographies</h2>
         
      @foreach($recentBiographies as $biography)
             
+            <div class="biography" >
             <p>{{$biography->text}}</p>
             
+            </div>
     @endforeach   
     
         
