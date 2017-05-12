@@ -7,7 +7,7 @@
 
 
 @section('content')
-    
+    <a href="/">Return Home</a>
     <h2>Delete Biography</h2>
     
     <h3>Confirm deletion</h3>

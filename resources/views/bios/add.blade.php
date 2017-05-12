@@ -8,8 +8,10 @@
 
 
 @section('content')
+    <a href="/">Return Home</a>
     <h2>Add a biography</h2>
 
+    <p>(* Indicates a required field)</p>
 
     <form method='POST' action='/add'>
     
@@ -23,10 +25,13 @@
                  </option>
              @endforeach
         </select>
-        <p>* Select the lagnuage of the biography:<br>
+        <br>
+        <br>
+        <p class='bold-label'>* Select the lagnuage of the biography:<br>
         <input type="radio" name="language" value="1"> English
         <input type="radio" name="language" value="2"> Spanish
         <input type="radio" name="language" value="3"> Portuguese
+        <br>
         <br>
         <label for="submitted_on">Submitted on:</label>
         <input type="date" name="submitted_on" id="submitted_on"><br>

@@ -77,6 +77,7 @@ class BiographyController extends Controller
     /**
     * POST
     * /edit
+    * This function does the actual saving of the changes made
     */       
     public function saveEdits(Request $request){
         

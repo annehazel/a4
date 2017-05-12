@@ -7,9 +7,11 @@
 
 
 @section('content')
+    <a href="/">Return Home</a>
     <h2>Edit a Biography</h2>
 
-
+    <p>(* Indicates a required field)</p>
+    
     <form method='POST' action='/edit'>
     
         {{ csrf_field() }}

@@ -17,21 +17,37 @@
 
 .input-block{
     border-radius: 8px;
-    background-color:gray;
-    display: inline-block;
+    border-style: solid;
+    border-color: rgb(72,83,91);
+    float: left;
     margin: 10px;
     width: 250px;
-    height: 150px;
+    height: 100px;
+    text-align: left;
+    padding: 5px;
     
 }
 
 .biography{
-    
+    width: 80%;
+    border-left: medium;
+    margin: 8px;
+    padding: 8px;
     
     
 }
 
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px 15px;
+    border-radius: 4px;
+}
 
+.edit-delete-link {
+    padding-right: 5px;
+    
+}
 
 .message {
     width:100%;
@@ -40,4 +56,9 @@
     background-color:blue;
     font-weight:bold;
     color:white;
+}
+
+.bold-label p {
+    font-weight: bold;  
+    
 }

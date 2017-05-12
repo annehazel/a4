@@ -18,8 +18,8 @@
     <div class="input-block"> <!-- add new biography div --> 
     
         <form method='GET' action='/add'>
-            {{ csrf_field() }}
-            <br>
+         
+           <br>
             <input type='submit' value='Add Biography' class='btn btn-primary btn-small'>
         </form>
             
@@ -27,7 +27,6 @@
 
     <div class="input-block">
         <form method='GET' action='/view/'>
-            {{ csrf_field() }}
             
             <label for='person_id'>* View/Edit biography for:</label>
             <select id='person_id' name='person_id'>
@@ -43,13 +42,14 @@
 
     </div>
     
-    <h2>Recently Updated Biographies</h2>
+    <h2>Recently Updated Biographies:</h2>
         
      @foreach($recentBiographies as $biography)
             
             <div class="biography" >
-            <p>{{$biography->text}}</p>
-            
+                <h4>{{$biography->person->name_first}} {{$biography->person->name_last}}</h4>
+                <p>Updated on: {{$biography->updated_at}}</p>
+                <p>{{$biography->text}}</p>
             </div>
     @endforeach   
     
