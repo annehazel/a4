@@ -36,7 +36,7 @@
 
 
         <br>
-        <input type='submit' class='btn btn-primary btn-small'>
+        <input type='submit' value='Add New Biography'class='btn btn-primary btn-small'>
 
     </form>
         
