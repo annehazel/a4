@@ -33,7 +33,7 @@
         <input type="radio" name="language" value="3"> Portuguese
         <br>
         <br>
-        <label for="submitted_on">Submitted on:</label>
+        <label for="submitted_on">* Submitted on:</label>
         <input type="date" name="submitted_on" id="submitted_on"><br>
         <label for='biography'>* Biography:</label><br>
         <textarea rows="4" cols="50" name='biography' id='biography'

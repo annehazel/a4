@@ -32,7 +32,7 @@
         <input type="radio" name="language_id" value="2" {{$biography->language_id=="2" ? 'CHECKED' : null }}> Spanish
         <input type="radio" name="language_id" value="3" {{$biography->language_id=="3" ? 'CHECKED' : null }}> Portuguese
         <br>
-        <label for="submitted_on">Submitted on:</label>
+        <label for="submitted_on">* Submitted on:</label>
         <input type="date" name="submitted_on" id="submitted_on" value='{{ old('submitted_on', $biography->submitted_on)}}'><br>
         <label for='biography'>* Biography:</label><br>
         <textarea rows="4" cols="50" name='biography' id='biography'
