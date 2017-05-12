@@ -16,7 +16,7 @@
     
         {{ csrf_field() }}
         
-        <input type='hidden' name='id'' value='{{$biography->id}}'>
+        <input type='hidden' name='id' value='{{$biography->id}}'>
         
         
         <label for='person_id'>* Biography for:</label>
