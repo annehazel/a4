@@ -151,14 +151,14 @@ class BiographyController extends Controller
         $newBiography->submitted_on = $request->submitted_on;
         $newBiography->text = $request->biography;
         $newBiography->person_id = $request->person_id;
-        
+        $personId = $newBiography->person_id;
 
         $newBiography->save();
                 
         
-        Session::flash('message', 'Your biography was added');
+        Session::flash('message', 'Your biography was added.');
         
-        return redirect('/');
+        return redirect('/view/'.$personId);
     
      }   
         
